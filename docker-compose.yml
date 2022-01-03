@@ -1,0 +1,16 @@
+version: 4.0.0
+
+networks:
+    default:
+
+services:
+    db:
+        image: postgres:11.5-alpine
+        container_name: postgres-demo
+        ports:
+            - 3306:3306
+        volumes:
+            - "./.data/db:/var/lib/postgres"
+        environment:
+            POSTGRES_PASSWORD: Welcome
+            POSTGRES_DB: conference_app
